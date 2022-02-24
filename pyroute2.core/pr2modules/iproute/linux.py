@@ -924,10 +924,10 @@ class RTNL_API(object):
         # nud -> state
         if 'nud' in kwarg:
             kwarg['state'] = kwarg.pop('nud')
-        if (command in ('add', 'del', 'append')) and not (
+        if (command in ('add', 'del', 'append', 'replace')) and not (
             kwarg.get('state', 0) & ndmsg.states['noarp']
         ):
-            # state must contain noarp in add / del / append
+            # state must contain noarp in add / del / append / replace
             kwarg['state'] = kwarg.pop('state', 0) | ndmsg.states['noarp']
             # other assumptions
             if not kwarg.get('state', 0) & (
