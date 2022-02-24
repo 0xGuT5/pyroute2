@@ -902,6 +902,11 @@ class RTNL_API(object):
 
         Append a new FDB record. The same syntax as for **add**.
 
+        **replace**
+
+        Replace a FDB record. If no matching record is found, a new one
+        will be created instead. The same syntax as for **add**.
+
         **del**
 
         Remove an existing FDB record. The same syntax as for **add**.
